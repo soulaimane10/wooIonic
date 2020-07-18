@@ -1,0 +1,87 @@
+<ion-header >
+  <ion-toolbar color="black">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/cart"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;font-weight: bold;color: #d2ab5a ;">{{"Address" | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div class="spinner" *ngIf="loader"><ion-spinner> </ion-spinner></div>
+
+<div *ngIf="!loader">
+<ion-list no-margin>
+
+  <ion-list-header>
+    <ion-label>{{"Billing Address" | translate}}</ion-label>
+  </ion-list-header>
+
+        <ion-item>
+            <ion-label position="stacked">{{"First Name" | translate}}</ion-label>
+            <ion-input required type="text" [(ngModel)]="checkoutData.form.billing_first_name" name="firstname"> </ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="stacked">{{"Last Name" | translate}}</ion-label>
+            <ion-input required type="text" [(ngModel)]="checkoutData.form.billing_last_name" name="lastname"> </ion-input>
+        </ion-item>
+       
+        <ion-item>
+            <ion-label position="stacked">{{"Country" | translate}}</ion-label>
+            <ion-input required type="text" value="Maroc" [(ngModel)]="checkoutData.form.shipping_country" name="shipping_country"> </ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="stacked">{{"Phone" | translate}}</ion-label>
+            <ion-input required type="text" [(ngModel)]="checkoutData.form.billing_phone" name="telephone"> </ion-input>
+        </ion-item>
+      
+        <ion-item>
+            <ion-label position="stacked">{{"Street Address" | translate}}</ion-label>
+            <ion-input required type="text" [(ngModel)]="checkoutData.form.billing_address_1" name="street1"> </ion-input>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label position="stacked">{{"Email" | translate}}</ion-label>
+            <ion-input required type="email" [(ngModel)]="checkoutData.form.billing_email" name="email"> </ion-input>
+        </ion-item>
+      <!--  <ion-item>
+            <ion-label position="stacked">{{"City" | translate}}</ion-label>
+            <ion-input required type="text" [(ngModel)]="checkoutData.form.billing_city" name="city"> </ion-input>
+        </ion-item>
+-->
+<ion-item>
+    <ion-label position="stacked">{{"City" | translate}}</ion-label>
+ <ion-select [(ngModel)]="checkoutData.form.billing_city" [compareWith]="compareWith">
+  
+    <ion-select-option required *ngFor="let city of cities"  name="city">{{city.nome}}</ion-select-option>
+
+</ion-select>
+</ion-item>
+        
+        <ion-item>
+            <ion-label position="stacked">{{"Postcode" | translate}}</ion-label>
+            <ion-input required type="text" [(ngModel)]="checkoutData.form.billing_postcode" name="postcode"> </ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="checkoutData.form?.countries && checkoutData.form?.countries.length > 1">
+            <ion-label>{{"Country" | translate}}</ion-label>
+            <ion-select [(ngModel)]="checkoutData.form.billing_country" (ngModelChange)="getBillingRegion()" name="billing_country">
+                <div *ngFor="let field of checkoutData.form.countries">
+                    <ion-select-option value="{{field.value}}"><span [innerHTML]="field.label"></span> </ion-select-option>
+                </div>
+            </ion-select>
+        </ion-item>
+
+        
+
+</ion-list>
+<div *ngIf="errorMessage">
+  <h2 [innerHTML]="errorMessage" style="font-size: 14px;  color: red;margin: 16px;"></h2>
+</div>
+<div class="submit-button">
+<ion-button color="{{settings.theme.button}}" expand="block" fill="solid" (click)="continueCheckout()">{{"Continue" | translate}}</ion-button>
+</div>
+</div>
+</ion-content>
