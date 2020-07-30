@@ -40,10 +40,10 @@ export class CartPage {
         });
     }
     checkout() {
-        if(this.settings.customer.id) {
+
             this.navCtrl.navigateForward('/tabs/cart/address');
-        }
-        else this.login();
+      
+       
     }
 
     getProduct(id){
@@ -152,10 +152,10 @@ export class CartPage {
 
     async login() {
           let alert = await this.alertCtrl.create({
-              header: 'Connectez-vous et continuez',
+              header: 'Si vous n\'avez pas de compte, clicker sur Valider la Commande',
               inputs: [{
                   name: 'Nom dutilisateur',
-                  placeholder: 'Email/Nom dutilisateur',
+                  placeholder: 'Email/Nom d\'utilisateur',
                   type: 'text'
               },
               {
@@ -164,7 +164,7 @@ export class CartPage {
                   type: 'text'
               }],
               buttons: [{
-                  text: 'valider la commande',
+                  text: 'Valider La Commande',
                   role: 'cancel',
                   handler: data => {
                     this.navCtrl.navigateForward('/tabs/cart/address');

@@ -6,7 +6,6 @@ import { Data } from '../data';
 import { Settings } from '../data/settings';
 import { Product } from '../data/product';
 import { md5 } from './md5';
-import { ReviewPage } from '../review/review.page';
 import { AlertController } from '@ionic/angular';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { Vendor } from '../data/vendor';

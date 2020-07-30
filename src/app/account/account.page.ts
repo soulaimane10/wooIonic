@@ -67,27 +67,6 @@ export class AccountPage {
         this.emailComposer.open(email);
     }
     ngOnInit() {
-       /* this.toggle = document.querySelector('#themeToggle');
-        this.toggle.addEventListener('ionChange', (ev) => {
-          document.body.classList.toggle('dark', ev.detail.checked);
-        
-          if(ev.detail.checked) {
-            this.statusBar.backgroundColorByHexString('#121212');
-            this.statusBar.styleLightContent();
-          } else {
-            this.statusBar.backgroundColorByHexString('#ffffff');
-            this.statusBar.styleDefault();
-          }
-        
-        });
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-        prefersDark.addListener((e) => checkToggle(e.matches));
-        function loadApp() {
-          checkToggle(prefersDark.matches);
-        }
-        function checkToggle(shouldCheck) {
-          this.toggle.checked = shouldCheck;
-        }
-     */  }
+      }
  
 }

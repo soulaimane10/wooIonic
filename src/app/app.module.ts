@@ -42,7 +42,6 @@ import { Crop } from '@ionic-native/crop/ngx';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
 
 //pages
-import { FilterPage } from '../app/filter/filter.page';
 import { OrderSummaryPage } from './checkout/order-summary/order-summary.page';
 
 
@@ -54,12 +53,10 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
   declarations: [
   AppComponent,
-  FilterPage,
   OrderSummaryPage
   //HomePage
   ],
   entryComponents: [
-  FilterPage,
   OrderSummaryPage
   //HomePage
   ],

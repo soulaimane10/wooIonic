@@ -34,7 +34,7 @@
 
         <ion-item>
             <ion-label position="stacked">{{"Phone" | translate}}</ion-label>
-            <ion-input required type="text" [(ngModel)]="checkoutData.form.billing_phone" name="telephone"> </ion-input>
+            <ion-input required type="number" [(ngModel)]="checkoutData.form.billing_phone" name="telephone"> </ion-input>
         </ion-item>
       
         <ion-item>
@@ -62,17 +62,9 @@
         
         <ion-item>
             <ion-label position="stacked">{{"Postcode" | translate}}</ion-label>
-            <ion-input required type="text" [(ngModel)]="checkoutData.form.billing_postcode" name="postcode"> </ion-input>
+            <ion-input required type="number" [(ngModel)]="checkoutData.form.billing_postcode" name="postcode"> </ion-input>
         </ion-item>
 
-        <ion-item *ngIf="checkoutData.form?.countries && checkoutData.form?.countries.length > 1">
-            <ion-label>{{"Country" | translate}}</ion-label>
-            <ion-select [(ngModel)]="checkoutData.form.billing_country" (ngModelChange)="getBillingRegion()" name="billing_country">
-                <div *ngFor="let field of checkoutData.form.countries">
-                    <ion-select-option value="{{field.value}}"><span [innerHTML]="field.label"></span> </ion-select-option>
-                </div>
-            </ion-select>
-        </ion-item>
 
         
 

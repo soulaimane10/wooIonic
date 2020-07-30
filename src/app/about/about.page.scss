@@ -1,0 +1,16 @@
+.backicon{
+    position: absolute;top: 50%;left: 16px;font-size: 35px;z-index: 2;
+
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+.nexticon{
+    position: absolute;top: 50%;right: 16px;font-size: 35px;z-index: 2;
+}
+
+.swiper-pagination-bullet {
+    background: #000;
+}

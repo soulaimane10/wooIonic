@@ -5,10 +5,9 @@ import { TabsPage } from './tabs.page';
 import { HomePage } from './../home/home.page';
 import { CartPage } from './../cart/cart.page';
 import { CategoriesPage } from './../categories/categories.page';
-import { SearchPage } from './../search/search.page';
+
 import { ProductsPage } from './../products/products.page';
 import { ProductPage } from './../product/product.page';
-import { ReviewPage } from './../review/review.page';
 
 //import { ContactPage } from './../contact/contact.page';
 import { AccountPage } from './../account/account.page';
@@ -26,12 +25,12 @@ import { OrdersPage } from './../account/orders/orders.page';
 
 import { RegisterPage } from './../account/register/register.page';
 import { SettingPage } from './../account/setting/setting.page';
-import { CurrenciesPage } from './../account/currencies/currencies.page';
-import { WalletPage } from './../account/wallet/wallet.page';
+import { AboutPage } from '../about/about.page';
 
 
 
 const routes: Routes = [
+ 
   {
     path: 'tabs',
     component: TabsPage,
@@ -44,7 +43,7 @@ const routes: Routes = [
             component: HomePage,
           },
           {
-            path: 'products/:id',
+            path: 'products/:id/:title',
             children: [
               {
                 path: '',
@@ -57,10 +56,7 @@ const routes: Routes = [
                     path: '',
                     component: ProductPage
                   },
-                  {
-                    path: 'review/:id',
-                    component: ReviewPage
-                  }
+                 
                 ]
               }
             ]
@@ -72,35 +68,20 @@ const routes: Routes = [
                 path: '',
                 component: ProductPage
               },
-              {
-                path: 'review/:id',
-                component: ReviewPage
-              }
+             
             ]
           },
-          {
-            path: 'vendor-products',
-            children: [
-              {
-                path: '',
-                component: ProductsPage
-              },
-              {
-                path: 'product/:id',
-                children: [
-                  {
-                    path: '',
-                    component: ProductPage
-                  },
-                  {
-                    path: 'review/:id',
-                    component: ReviewPage
-                  }
-                ]
-              }
-            ]
-          },
+          
         
+        ]
+      },
+      {
+        path: 'about',
+        children: [
+          {
+            path: '',
+                component: AboutPage
+          }
         ]
       },
       {
@@ -111,7 +92,7 @@ const routes: Routes = [
             component: CategoriesPage
           },
           {
-            path: 'products/:id',
+            path: 'products/:id/:title',
             children: [
               {
                 path: '',
@@ -124,82 +105,15 @@ const routes: Routes = [
                     path: '',
                     component: ProductPage
                   },
-                  {
-                    path: 'review/:id',
-                    component: ReviewPage
-                  }
+                 
                 ]
               }
             ]
           },
-          {
-            path: 'vendor-products',
-            children: [
-              {
-                path: '',
-                component: ProductsPage
-              },
-              {
-                path: 'product/:id',
-                children: [
-                  {
-                    path: '',
-                    component: ProductPage
-                  },
-                  {
-                    path: 'review/:id',
-                    component: ReviewPage
-                  }
-                ]
-              }
-            ]
-          }
+          
         ]
       },
-      {
-        path: 'search',
-        children: [
-          {
-            path: '',
-            component: SearchPage
-          },
-          {
-            path: 'product/:id',
-            children: [
-              {
-                path: '',
-                component: ProductPage
-              },
-              {
-                path: 'review/:id',
-                component: ReviewPage
-              }
-            ]
-          },
-          {
-            path: 'vendor-products',
-            children: [
-              {
-                path: '',
-                component: ProductsPage
-              },
-              {
-                path: 'product/:id',
-                children: [
-                  {
-                    path: '',
-                    component: ProductsPage
-                  },
-                  {
-                    path: 'review/:id',
-                    component: ReviewPage
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
+     
       {
         path: 'cart',
         children: [
@@ -222,10 +136,7 @@ const routes: Routes = [
                 path: '',
                 component: ProductPage
               },
-              {
-                path: 'review/:id',
-                component: ReviewPage
-              }
+            
             ]
           }
         ]
@@ -259,23 +170,8 @@ const routes: Routes = [
             path: 'setting',
             component: SettingPage
           },
-          {
-            path: 'currencies',
-            component: CurrenciesPage
-          },
-          {
-            path: 'wallet',
-            children: [
-              {
-                path: '',
-                component: WalletPage
-              },
-              {
-                path: 'cart',
-                component: CartPage
-              }
-            ]
-          },
+         
+          
         
           {
             path: 'orders',
@@ -303,25 +199,7 @@ const routes: Routes = [
               }
             ]
           },
-          {
-            path: 'wishlist',
-            children: [
-           
-              {
-                path: 'product/:id',
-                children: [
-                  {
-                    path: '',
-                    component: ProductPage
-                  },
-                  {
-                    path: 'review/:id',
-                    component: ReviewPage
-                  }
-                ]
-              }
-            ]
-          },
+          
          
          
       

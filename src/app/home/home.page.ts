@@ -124,7 +124,7 @@ export class HomePage {
                 this.data.products = this.data.blocks.recentProducts;
             }
             if (this.data.blocks.user) {
-                this.api.postItem('get_wishlist').subscribe(res => {
+                this.api.postItem('get_wishlist').subscribe((res: any) => {
                     for (let item in res) {
                         this.settings.wishlist[res[item].id] = res[item].id;
                     }
@@ -162,8 +162,9 @@ export class HomePage {
         const results = this.data.categories.filter(item => item.parent === parseInt(id));
         return results;
     }
-    getCategory(id) {
-        this.navCtrl.navigateForward('/tabs/home/products/' + id);
+    getCategory(id,title) {
+        this.navCtrl.navigateForward('/tabs/home/products/' + id+'/'+ title);
+        console.log(title);
     }
     loadData(event) {
         this.filter.page = this.filter.page + 1;

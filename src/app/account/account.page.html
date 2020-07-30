@@ -1,11 +1,12 @@
 
-
-
-      <ion-header mode="ios" collapse="condense">              
+      <ion-header collapse="condense">              
         <ion-toolbar color="black" >
             <ion-title style="text-align: center;font-weight: bold;color: #d2ab5a ;" size="large">{{"Account" | translate}}</ion-title>
         </ion-toolbar>
       </ion-header>
+
+
+
       <ion-content>
     <ion-list>
         
@@ -42,33 +43,37 @@
             <ion-icon style="background-color: var(--ion-color-medium, #000000); color: white" class="icon-start ion-margin-end" name="logo-whatsapp" slot="start"></ion-icon>
             <ion-label>{{"Whatsapp nous" | translate}}</ion-label>
         </ion-item>
+
+        <ion-item lines="inset" class="ion-activatable" href="https://www.facebook.com/Frozydelices/" detail="true">
+            <ion-icon style="background-color: var(--ion-color-medium, #000000); color: white" class="icon-start ion-margin-end" name="logo-facebook" slot="start"></ion-icon>
+            <ion-label>{{"notre facebook" | translate}}</ion-label>
+        </ion-item>
+
+        <ion-item lines="inset" class="ion-activatable" href="https://www.instagram.com/frozy_delices/" detail="true">
+            <ion-icon style="background-color: var(--ion-color-medium, #000000); color: white" class="icon-start ion-margin-end" name="logo-instagram" slot="start"></ion-icon>
+            <ion-label>{{"notre Instagram" | translate}}</ion-label>
+        </ion-item>
         <ion-item (click)="email(settings?.settings?.support_email)" detail="true"  *ngIf="settings?.settings?.support_email" lines="inset" class="ion-activatable">
             <ion-icon style="background-color: var(--ion-color-medium, #3dc2ff); color: white" class="icon-start ion-margin-end" name="mail" slot="start"></ion-icon>
             <ion-label>{{"Email us" | translate}}</ion-label>
         </ion-item>
 
-       <!-- <ion-item lines="inset" (click)="goTo('tabs/account/map')" detail="true"  class="ion-activatable" *ngIf="settings.settings?.switchLocations">
-            <ion-icon style="background-color: var(--ion-color-danger, #eb445a); color: white" class="icon-start ion-margin-end" name="compass" slot="start"></ion-icon>
-            <ion-label>{{"Locations" | translate}}</ion-label>
-        </ion-item>-->
-      <!--  <ion-item lines="inset" class="ion-activatable" detail="true"  (click)="shareApp()">
-            <ion-icon style="background-color: var(--ion-color-secondary, #3dc2ff); color: white" class="icon-start ion-margin-end" name="share" slot="start"></ion-icon>
+     
+      <ion-item lines="inset" class="ion-activatable" detail="true"  (click)="shareApp()">
+            <ion-icon style="background-color: var(--ion-color-medium, #3dc2ff); color: white" class="icon-start ion-margin-end" name="share" slot="start"></ion-icon>
             <ion-label>{{"Invite Friends" | translate}}</ion-label>
-        </ion-item>-->
+        </ion-item>
         <ion-item lines="inset" class="ion-activatable" detail="true"  (click)="rateApp()">
             <ion-icon style="background-color: var(--ion-color-medium); color: white" class="icon-start ion-margin-end" name="star" slot="start"></ion-icon>
             <ion-label>{{"Rate us" | translate}}</ion-label>
         </ion-item>
       
-        <ion-item *ngIf="settings.languages?.length" detail="true"  lines="inset" (click)="goTo('tabs/account/setting')" lines="inset" class="ion-activatable">
+      <!--  <ion-item *ngIf="settings.languages?.length" detail="true"  lines="inset" (click)="goTo('tabs/account/setting')" lines="inset" class="ion-activatable">
             <ion-icon style="background-color: var(--ion-color-medium); color: white" class="icon-start ion-margin-end" name="globe" slot="start"></ion-icon>
             <ion-label>{{"Language" | translate}}</ion-label>
-        </ion-item>
+        </ion-item>-->
 
-        <ion-item *ngIf="settings.currencies?.length" detail="true"  lines="inset" (click)="goTo('tabs/account/currencies')" lines="inset" class="ion-activatable">
-            <ion-icon style="background-color: var(--ion-color-medium, #000000); color: white" class="icon-start ion-margin-end" name="logo-usd" slot="start"></ion-icon>
-            <ion-label>{{"Currency" | translate}}</ion-label>
-        </ion-item>
+       
 
         <ion-item *ngFor="let page of settings.pages" lines="inset" [hidden]="!page.url" (click)="goTo('/tabs/account/post/'+page.url)" detail="true"  lines="inset" class="ion-activatable">
             <ion-icon style="background-color: var(--ion-color-medium, #5452c5); color: white" class="icon-start ion-margin-end" name="document" slot="start"></ion-icon>

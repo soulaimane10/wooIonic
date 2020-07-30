@@ -55,7 +55,7 @@
 
 <form #f="ngForm" class="coupon">
     <ion-item>
-        <ion-input type="text" [(ngModel)]="cart.coupon" name="coupon" placeholder="{{'Enter coupon here' | translate}}"> </ion-input>
+        <ion-input type="text" [(ngModel)]="cart.coupon" name="coupon" placeholder="{{'Entrez le coupon ici' | translate}}"> </ion-input>
         <h2 item-right> 
             <ion-button block color="{{settings.theme.button}}" type="submit" text-uppercase (click)="submitCoupon(cart.coupon)">{{"Apply" | translate}}
             </ion-button>

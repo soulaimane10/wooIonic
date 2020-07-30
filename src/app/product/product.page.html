@@ -17,13 +17,7 @@
    <div class="spinner" *ngIf="!product.id">
       <ion-spinner> </ion-spinner>
    </div>
-   <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="settings.settings?.enable_product_chat">
-      <a href="https://wa.me/{{settings.settings?.whatsapp_number}}">
-         <ion-fab-button size="small" color="whatsapp">
-            <ion-icon name="logo-whatsapp"></ion-icon>
-         </ion-fab-button>
-      </a>
-   </ion-fab>
+   
    <div *ngIf="product.id">
       <div style="display: flex;">
       <ion-slides pager="true" *ngIf="!product.image" dir="{{settings.dir}}">

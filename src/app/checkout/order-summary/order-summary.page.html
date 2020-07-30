@@ -9,7 +9,7 @@
 <ion-list *ngIf="order">
 
   <ion-list-header>
-    <ion-label style="font-weight: 900;">{{order.id}} - <span style="text-transform: uppercase;">{{order.status}}</span></ion-label>
+    <ion-label style="font-weight: 900;">{{order.id}} - <span style="text-transform: uppercase;">en attente</span></ion-label>
   </ion-list-header>
 
   <ion-list-header>
@@ -101,11 +101,14 @@
     <ion-label class="grand-total">Total<span style="float: right">{{order.total | currency:settings.currency:'symbol':'1.2-2'}}</span></ion-label>
   </ion-label>
   </ion-item>
-<div class="submit-button">
-<ion-button color="{{settings.theme.button}}" expand="block" fill="solid" (click)="continue()">{{"Continue" | translate}}</ion-button>
-</div>
-  
 
 </ion-list>
 
 </ion-content>
+  <ion-footer class="product-detail-footer">
+
+<ion-button expand="full" color="{{settings.theme.button}}" expand="block" fill="solid" (click)="continue()">{{"Continue" | translate}}</ion-button>
+
+  
+</ion-footer>
+

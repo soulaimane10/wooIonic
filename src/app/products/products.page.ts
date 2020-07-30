@@ -5,7 +5,6 @@ import { ApiService } from '../api.service';
 import { Data } from '../data';
 import { Settings } from '../data/settings';
 import { Product } from '../data/product';
-import { FilterPage } from '../filter/filter.page';
 import { Vendor } from '../data/vendor';
 import { TranslateService } from '@ngx-translate/core';
 import { AlertController } from '@ionic/angular';
@@ -25,39 +24,23 @@ export class ProductsPage {
     attributes: any;
     hasMoreItems: boolean = true;
     loader: boolean = false;
-    searchInput: any;
-    showSearch: boolean = true;
-
+    title: string;
     cart: any = {};
     options: any = {};
     lan: any = {};
     variationId: any;
     gridView: boolean = true;
-
+   
     constructor(public config: Config, public alertController: AlertController, public translate: TranslateService, public vendor: Vendor, public modalController: ModalController, public api: ApiService, public data: Data, public product: Product, public settings: Settings, public router: Router, public navCtrl: NavController, public route: ActivatedRoute) {
         this.filter.page = 1;
         this.filter.status = 'publish';
         this.options.quantity = 1;
+        this.title = this.route.snapshot.paramMap.get('title');
+  
+        
+        console.log(this.title);
     }
-    async getFilter() {
-        const modal = await this.modalController.create({
-            component: FilterPage,
-            componentProps: {
-                filter: this.filter,
-                attributes: this.attributes
-            }
-        });
-        modal.present();
-        const {
-            data
-        } = await modal.onDidDismiss();
-        if (data) {
-            this.filter = data;
-            Object.keys(this.filter).forEach(key => this.filter[key] === undefined ? delete this.filter[key] : '');
-            this.filter.page = 1;
-            this.getProducts();
-        }
-    }
+ 
     loadData(event) {
         this.filter.page = this.filter.page + 1;
         this.api.postFlutterItem('products', this.filter).subscribe(res => {
@@ -93,6 +76,9 @@ export class ProductsPage {
         if(this.route.snapshot.paramMap.get('id')){
             this.filter.id = this.route.snapshot.paramMap.get('id');
         }
+
+        
+        
         if(this.vendor.vendor.id){
             this.filter.vendor = this.vendor.vendor.id ? this.vendor.vendor.id : this.vendor.vendor.ID;
         }
@@ -136,25 +122,13 @@ export class ProductsPage {
         console.log('Loaded');
         product.loaded = true;
     }
-    onInput(){
-        if (this.searchInput.length) {
-            this.products = '';
-            this.filter.q = this.searchInput;
-            this.filter.page = 1;
-            this.getProducts();
-        } else {
-            this.products = '';
-            this.filter.q = undefined;
-            this.filter.page = 1;
-            this.getProducts();
-        }
-    }
+   
     ionViewWillLeave(){
-        this.showSearch = false;
+        
     }
     ionViewDidLeave() {
         this.vendor.vendor = {};
-        this.showSearch = true;
+       
     }
     toggleGridView() {
         this.gridView = !this.gridView;

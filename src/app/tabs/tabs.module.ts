@@ -13,11 +13,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TabsPage } from './tabs.page';
 import { HomePage } from './../home/home.page';
 import { CartPage } from './../cart/cart.page';
-import { SearchPage } from './../search/search.page';
 import { CategoriesPage } from './../categories/categories.page';
 import { ProductsPage } from './../products/products.page';
 import { ProductPage } from './../product/product.page';
-import { ReviewPage } from './../review/review.page';
 
 import { ContactPage } from './../contact/contact.page';
 import { AccountPage } from './../account/account.page';
@@ -35,8 +33,7 @@ import { OrdersPage } from './../account/orders/orders.page';
 
 import { RegisterPage } from './../account/register/register.page';
 import { SettingPage } from './../account/setting/setting.page';
-import { CurrenciesPage } from './../account/currencies/currencies.page';
-import { WalletPage } from './../account/wallet/wallet.page';
+import { AboutPage } from '../about/about.page';
 @NgModule({
   imports: [
     IonicModule,
@@ -53,10 +50,9 @@ import { WalletPage } from './../account/wallet/wallet.page';
   HomePage,
   CartPage,
   CategoriesPage,
-  SearchPage,
+ AboutPage,
   ProductsPage,
   ProductPage,
-  ReviewPage,
   ContactPage,
   AccountPage,
   CheckoutAddressPage,
@@ -71,9 +67,6 @@ import { WalletPage } from './../account/wallet/wallet.page';
  
   RegisterPage,
   SettingPage,
-  CurrenciesPage,
-  WalletPage,
-
 
 
   ]
