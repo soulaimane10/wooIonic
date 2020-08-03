@@ -12,9 +12,9 @@ import { Settings } from '../data/settings';
 })
 export class CategoriesPage {
     constructor(public api: ApiService, public data: Data, public loadingController: LoadingController, public navCtrl: NavController, public router: Router, public settings: Settings, public route: ActivatedRoute) {}
-    getProducts(id,title) {
+    getProducts(id) {
         
-        this.navCtrl.navigateForward('/tabs/categories/products/' + id +'/'+ title);
+        this.navCtrl.navigateForward('/tabs/categories/products/' + id );
     }
     subCategories(id){
 	  return this.data.categories.filter(item => item.parent == id);
@@ -24,7 +24,7 @@ export class CategoriesPage {
 	  	this.data.mainCategories[i].show = !intial;
         if(this.data.categories.filter(item => item.parent == this.data.mainCategories[i].id).length == 0) {
             this.data.mainCategories.forEach(item => item.show = false);
-            this.getProducts(this.data.mainCategories[i].id,this.data.mainCategories[i].name);
+            this.getProducts(this.data.mainCategories[i].id);
         }
   	}
 }

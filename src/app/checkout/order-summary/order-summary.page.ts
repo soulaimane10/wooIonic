@@ -37,6 +37,6 @@ export class OrderSummaryPage implements OnInit {
     continue () {
         //Clear Cart
         this.api.postItem('emptyCart').subscribe(res => {}, err => {});
-        this.navCtrl.navigateRoot('/tabs/home');
+        this.navCtrl.navigateRoot('/tabs/thank-you');
     }
 }

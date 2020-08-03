@@ -26,6 +26,7 @@ import { OrdersPage } from './../account/orders/orders.page';
 import { RegisterPage } from './../account/register/register.page';
 import { SettingPage } from './../account/setting/setting.page';
 import { AboutPage } from '../about/about.page';
+import { ThankYouPage } from '../thank-you/thank-you.page';
 
 
 
@@ -43,7 +44,7 @@ const routes: Routes = [
             component: HomePage,
           },
           {
-            path: 'products/:id/:title',
+            path: 'products/:id',
             children: [
               {
                 path: '',
@@ -61,6 +62,7 @@ const routes: Routes = [
               }
             ]
           },
+    
           {
             path: 'product/:id',
             children: [
@@ -84,6 +86,18 @@ const routes: Routes = [
           }
         ]
       },
+
+      {
+        path: 'thank-you',
+        children: [
+          {
+            path: '',
+                component: ThankYouPage
+          }
+        ]
+       
+      },
+    
       {
         path: 'categories',
         children: [
@@ -92,7 +106,7 @@ const routes: Routes = [
             component: CategoriesPage
           },
           {
-            path: 'products/:id/:title',
+            path: 'products/:id',
             children: [
               {
                 path: '',
@@ -171,7 +185,6 @@ const routes: Routes = [
             component: SettingPage
           },
          
-          
         
           {
             path: 'orders',

@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="black">
-    <ion-title style="text-align: center;">A PROPOS DE NOUS</ion-title>
+    <ion-title  style="text-align: center;font-weight: bold;color: #d2ab5a ;">A PROPOS DE NOUS</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -19,10 +19,15 @@
         <ion-slides pager="true" #theSlides>
           <ion-slide style="text-align: inherit;" >
             
-            <div style="width: 80%;">
-           
             
+              <ion-card style="width: 80%;">
+              <ion-card-header>
+                <ion-card-title style="text-align: center;font-size: 15px;font-weight:bold"> PRÉSENTATION</ion-card-title>
+              </ion-card-header>
+
+              <img src="assets/image/login_logo.jpg"/>
               
+              <ion-card-content>
                 Plus besoin de vous déplacer. FROZY vous propose une large gamme de produits surgelés prêts à l’emploi :
           <ul>
                <li> Une Gamme complète de Pains Boulangers & Viennoiseries pur beurre
@@ -34,16 +39,21 @@
             Et Pour les fins connaisseurs, Notre Maître Glacier a concocté des Créations uniques et raffinées aux goûts inimitables.
           </li>
           </ul> 
-              
-           </div>
-           </ion-slide>
+          
+        </ion-card-content>
+      </ion-card>
+          
+          
+          </ion-slide>
            
            <ion-slide style="text-align: inherit;">
             <ion-card style="width: 80%;">
-              <img src="assets/image/frozyabout.jpg"/>
               <ion-card-header>
                 <ion-card-title style="text-align: center;font-size: 15px;font-weight:bold">NOS ENGAGEMENTS</ion-card-title>
               </ion-card-header>
+
+              <img src="assets/image/aboutus.jpg" height="140px"/>
+           
             
               <ion-card-content>
                Tous nos produits sont élaborés de manière artisanale et sont agrées ONSSA, répondant aux normes de sécurité sanitaires les plus exigeantes
@@ -71,28 +81,12 @@
                 <br><br>
               </ion-card-content>
               
-          <img src="assets/image/frozylogo.jpg" height="50px"/>  
+          <img src="assets/image/logo-default.png" height="70px"/>  
             </ion-card>
           </ion-slide>
 
 
-          <ion-slide >
-            <ion-card style="width: 80%;">
-    
-              <ion-card-header>
-                <ion-card-title style="text-align: center;font-size: 15px;font-weight:bold">َA propos de cette version </ion-card-title>
-              </ion-card-header>
-            
-              <ion-card-content>
-                Devanture confortable et conviviale
-                Dans cette version, vous pouvez partager nos produits avec vos amis <br>
-                Vous pouvez également communiquer avec nous sur tous les médias sociaux et via WhatsApp ou par e-mail
-                <br>
-              </ion-card-content>
-              
-          <img src="assets/image/frozy4.jpg" height="200px"/>  
-            </ion-card>
-          </ion-slide>
+        
         </ion-slides>
       </ion-col>
     </ion-row>

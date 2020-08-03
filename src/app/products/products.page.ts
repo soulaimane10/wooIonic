@@ -24,7 +24,8 @@ export class ProductsPage {
     attributes: any;
     hasMoreItems: boolean = true;
     loader: boolean = false;
-    title: string;
+    
+    id : string;
     cart: any = {};
     options: any = {};
     lan: any = {};
@@ -35,10 +36,8 @@ export class ProductsPage {
         this.filter.page = 1;
         this.filter.status = 'publish';
         this.options.quantity = 1;
-        this.title = this.route.snapshot.paramMap.get('title');
-  
-        
-        console.log(this.title);
+        this.id = this.route.snapshot.paramMap.get('id');
+       
     }
  
     loadData(event) {

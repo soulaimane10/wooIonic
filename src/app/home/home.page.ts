@@ -157,14 +157,15 @@ export class HomePage {
     getProduct(item) {
         this.product.product = item;
         this.navCtrl.navigateForward('/tabs/home/product/' + item.id);
+        console.log(item);
     }
     getSubCategories(id) {
         const results = this.data.categories.filter(item => item.parent === parseInt(id));
         return results;
     }
-    getCategory(id,title) {
-        this.navCtrl.navigateForward('/tabs/home/products/' + id+'/'+ title);
-        console.log(title);
+    getCategory(id) {
+        this.navCtrl.navigateForward('/tabs/home/products/' + id);
+       
     }
     loadData(event) {
         this.filter.page = this.filter.page + 1;

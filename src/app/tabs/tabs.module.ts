@@ -34,6 +34,7 @@ import { OrdersPage } from './../account/orders/orders.page';
 import { RegisterPage } from './../account/register/register.page';
 import { SettingPage } from './../account/setting/setting.page';
 import { AboutPage } from '../about/about.page';
+import { ThankYouPage } from '../thank-you/thank-you.page';
 @NgModule({
   imports: [
     IonicModule,
@@ -51,6 +52,7 @@ import { AboutPage } from '../about/about.page';
   CartPage,
   CategoriesPage,
  AboutPage,
+ ThankYouPage,
   ProductsPage,
   ProductPage,
   ContactPage,
