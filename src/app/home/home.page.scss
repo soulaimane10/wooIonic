@@ -632,3 +632,29 @@ ion-refresher {
     z-index: 1;
 }
 
+.card-shopping{
+    margin: 5px;
+    padding: 10px;
+    
+    ion-card-content{
+        padding:0;   
+        
+        ion-col{
+            &:first-child{
+                text-align: center;
+                font-size: 15px;
+                font-weight: bold;
+
+            }
+            &:last-child{
+                text-align: center;
+            }
+       }
+       ion-button{
+           margin-left: 0;
+           margin-right: 0;
+           font-size: 10px;
+           font-weight: bold;
+       }
+    }
+}

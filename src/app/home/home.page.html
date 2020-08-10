@@ -208,7 +208,7 @@
                         <div class="ion-activatable ion-focusable hydrated" (click)="getCategory(236)">
                             <ion-card mode="{{settings.settings.mode}}" button="true" class="ion-activatable ion-focusable hydrated {{children.banner_shadow}}" [style.border-radius]="children.border_radius"> 
                                
-                                <img src="assets\image\pain-1-1.jpg" style="height: 150px;">
+                                <img src="assets\image\pain-1-1.jpg" >
                                 <ion-card-header>
                                     <ion-card-title  style=" text-align: center; font-weight: bold; " mode="md" >BOULANGERIE </ion-card-title>
                                 </ion-card-header>
@@ -220,7 +220,7 @@
                         <div class="ion-activatable ion-focusable hydrated" (click)="getCategory(240)">
                             <ion-card mode="{{settings.settings.mode}}" button="true" class="ion-activatable ion-focusable hydrated {{children.banner_shadow}}" [style.border-radius]="children.border_radius"> 
                                
-                                <img src="assets\image\vien.jpg" style="height: 135px;">
+                                <img src="assets\image\vien.jpg" >
                                 <ion-card-header  >
                                     <ion-card-title  style=" text-align: center; font-weight: bold;" mode="md" >VIENNOISERIE  </ion-card-title>
                                 </ion-card-header>
@@ -232,7 +232,7 @@
                         <div class="ion-activatable ion-focusable hydrated" (click)="getCategory(241)">
                             <ion-card mode="{{settings.settings.mode}}" button="true" class="ion-activatable ion-focusable hydrated {{children.banner_shadow}}" [style.border-radius]="children.border_radius"> 
                                
-                                <img src="assets\image\pat-1.jpg" style="height: 135px;">
+                                <img src="assets\image\pat-1.jpg" >
                                 <ion-card-header>
                                     <ion-card-title   style=" text-align: center; font-weight: bold;" mode="md" > PÂTISSERIE </ion-card-title>  
                                 </ion-card-header>
@@ -244,7 +244,7 @@
                         <div class="ion-activatable ion-focusable hydrated" (click)="getCategory(242)">
                             <ion-card mode="{{settings.settings.mode}}" button="true" class="ion-activatable ion-focusable hydrated {{children.banner_shadow}}" [style.border-radius]="children.border_radius"> 
                                
-                                <img src="assets\image\glace-2.jpg" style="height: 135px;">
+                                <img src="assets\image\glace-2.jpg" >
                                 <ion-card-header>
                                     <ion-card-title  style=" text-align: center; font-weight: bold;" mode="md" > GLACES </ion-card-title>
                                 </ion-card-header>
@@ -289,41 +289,56 @@
    
       <ion-list-header *ngIf="data.products?.length" style="text-align: center;margin-top: 30px; background-color: rgb(0, 0, 0);color : #e1be64 ">
         <ion-label >{{"NOS PANIERS GOURMANDS" | translate}}</ion-label>
-    </ion-list-header>
-    
-    <ion-row  *ngIf="data.products?.length">
-    <ion-col size="12"   >
-    <ion-card mode="md"  button="true" class="ion-activatable ion-focusable hydrated {{settings.settings.product_shadow}}" [style.border-radius.px]="settings.dimensions.productBorderRadius" [routerLink]="['/tabs/home/product/11779']">
-    <ion-img  alt=""  src="assets/image/panier-250.jpg"></ion-img>
-    
-    <ion-card-header >
-      <ion-card-title style="text-align: center; font-size: large; font-weight: bold; padding: 10px;" mode="md" >PANIER DECOUVERTE</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p class="price" style="text-align: center; font-size: medium; font-weight: bold;">
-         
-          <span class="regular-price" ><span >250 DH</span></span>
-      </p>
-    </ion-card-content>
-    </ion-card>
-    </ion-col>
-    
-    <ion-col size="12" >
-        <ion-card mode="md"  button="true" class="ion-activatable ion-focusable hydrated {{settings.settings.product_shadow}}" [style.border-radius.px]="settings.dimensions.productBorderRadius" [routerLink]="['/tabs/home/product/11778']">
-        <ion-img  alt="" src="assets/image/pannie-390.jpg"></ion-img>
         
-        <ion-card-header >
-          <ion-card-title style="text-align: center; font-size: large; font-weight: bold; padding: 10px;" mode="md" >PANIER GOURMAND FAMILIAL</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <p class="price" style="text-align: center; font-size: medium; font-weight: bold;">
-             
-              <span class="regular-price" ><span >390 DH</span></span>
-          </p>
-        </ion-card-content>
-        </ion-card>
+    </ion-list-header>
+
+      
+
+      <ion-row no-padding *ngIf="data.products?.length">
+        <ion-col    size="12" size-sm="6" size-md="6" no-padding>
+          <!-- card with content inside having images with name and price with buy button on it with iterations -->
+          <ion-card class="card-shopping">
+            <ion-card-content>
+              <ion-row>
+                <ion-col size="12">
+               PANIER DECOUVERTE
+                </ion-col>
+                <ion-col size="12">
+                  <ion-text>
+                    <p>250 DH</p>
+                  </ion-text>
+                </ion-col>
+              </ion-row>
+              <ion-img src="assets/image/panier-250.jpg"></ion-img>
+              <ion-button [routerLink]="['/tabs/home/product/11779']" expand="full">Commander maintenant</ion-button>
+            </ion-card-content>
+          </ion-card>
         </ion-col>
-    </ion-row>
+
+        <ion-col  size="12" size-sm="6" size-md="6" no-padding>
+            <!-- card with content inside having images with name and price with buy button on it with iterations -->
+            <ion-card class="card-shopping">
+              <ion-card-content>
+                <ion-row>
+                  <ion-col size="12">
+                      PANIER GOURMAND FAMILIAL
+                  </ion-col>
+                  <ion-col size="12">
+                    <ion-text>
+                      <p>390 DH</p>
+                    </ion-text>
+                  </ion-col>
+                </ion-row>
+                <ion-img src="assets/image/pannie-390.jpg"></ion-img>
+                <ion-button [routerLink]="['/tabs/home/product/11779']" expand="full">Commander maintenant</ion-button>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+      </ion-row>
+
+     
+
+
     <div *ngIf="data.blocks?.featured?.length" class="related-products">
         <ion-list-header  style="text-align: center;margin-top: 30px; background-color: rgb(0, 0, 0);color : #e1be64 ">
         <ion-label>{{"  MEILLEURES VENTES" | translate}}</ion-label>
